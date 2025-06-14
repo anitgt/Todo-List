@@ -12,9 +12,13 @@ while(input !== 'quit' && input !== 'q') {
       todos.push(newTodo);
       console.log(`${newTodo} was added to the list`)
     } else if(input === "Delete") {
-        const delprompt = prompt('What index do you like to delete?');
-        const display = todos.splice(delprompt, 1)
-        console.log(`Okay, ${display} was deleted`)
+        const delprompt = parseInt(prompt('What index do you like to delete?'));
+        if(!Number.isNaN(delprompt)) {
+            const display = todos.splice(delprompt, 1)
+            console.log(`Okay, ${display} was deleted`)
+        } else {
+            console.log("Enter a valid number!")
+        }
     }
     input = prompt("What Would You Like to do?");
 } 

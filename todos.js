@@ -13,7 +13,8 @@ while(input !== 'quit' && input !== 'q') {
       console.log(`${newTodo} was added to the list`)
     } else if(input === "Delete") {
         const delprompt = prompt('What index do you like to delete?');
-        todos.splice(delprompt)
+        const display = todos.splice(delprompt, 1)
+        console.log(`Okay, ${display} was deleted`)
     }
     input = prompt("What Would You Like to do?");
 } 
